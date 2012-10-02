@@ -9,8 +9,6 @@ Go to the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso). The
 
 ![SSO Settings](http://stock.doyoubuzz.com/doc/sso/sso-settings.png "SSO Settings")
 
-[SCREENSHOT]
-
 ## Configure the external id of the groups
 
 If you want to link the user to a specific group (or groups) in DoYouBuzz Showcase / Campus, you need to edit the group on DoYouBuzz Showcase / Campus as an admin, and set the "external id". The "external id" is the id of the group in your system (it can be a numeric or alphanumric value)
