@@ -22,7 +22,11 @@ The SSO follow these different steps:
 * You direct you visitor on the page http://showcase.doyoubuzz.com/p/fr/your-company/sso
 * The visitor is automatically redirected on the URL you configured earlier with a timestamp parameter (it will be used for security purpose)
 * This page must check if the user is logged in into your system. In this case, you must redirect this user to a specific URL with a few parameters (this URL is given on the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso)), it looks like http://showcase.doyoubuzz.com/p/fr/your-company/sso 
-* DoYouBuzz checks these parameters. If they are valid, several cases are possible
+* DoYouBuzz checks these parameters. If they are valid, several cases are possible :
+ * The user has alreeady been authenticated on DoYouBuzz through your SSO: in this case, he is automaticlaly connected to his DoYouBuzz account
+ * If he hasn't been authenticated previously through the SSO, he is asked to join your database with his DoYouBuzz account (he can use either an existing DoYouBuzz account or create a new account).
+
+** qmsldkmlqskd
 
 ## Parameters to send to the SSO URL: 
 
