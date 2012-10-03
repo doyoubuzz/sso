@@ -26,8 +26,6 @@ The SSO follow these different steps:
  * The user has alreeady been authenticated on DoYouBuzz through your SSO: in this case, he is automaticlaly connected to his DoYouBuzz account
  * If he hasn't been authenticated previously through the SSO, he is asked to join your database with his DoYouBuzz account (he can use either an existing DoYouBuzz account or create a new account).
 
-** qmsldkmlqskd
-
 ## Parameters to send to the SSO URL: 
 
 When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like ```http://showcase.doyoubuzz.com/p/fr/your-company/sso?email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825```
