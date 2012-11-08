@@ -24,7 +24,9 @@ The SSO follow these different steps:
 * This page must check if the user is logged in into your system. In this case, you must redirect this user to a specific URL with a few parameters (this URL is given on the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso)), it looks like http://showcase.doyoubuzz.com/p/fr/your-company/sso 
 * DoYouBuzz checks these parameters. If they are valid, several cases are possible :
  * The user has alreeady been authenticated on DoYouBuzz through your SSO: in this case, he is automaticlaly connected to his DoYouBuzz account
- * If he hasn't been authenticated previously through the SSO, he is asked to join your database with his DoYouBuzz account (he can use either an existing DoYouBuzz account or create a new account).
+ * If he hasn't been authenticated previously through the SSO, he is asked to join your database with his DoYouBuzz account (he can use either an existing DoYouBuzz account or create a new account). 
+
+Please note it may take up to 10 minutes before the user appears in your user list.
 
 ## Parameters to send to the SSO URL: 
 
@@ -65,5 +67,3 @@ The hash parameter is a md5 of the concatenation of email, firstname, lastname, 
 In PHP: ```$hash = md5($email . $firstname . $lastname . $external_id . $group . $timestamp . $secretkey);```
 
 Please note : the group parameter is a concatenation of the differents groups. For example if your Kara Thrace belongs to the groups 'pilot' and 'viper' the $group variable above will be 'pilotviper'
-
-
