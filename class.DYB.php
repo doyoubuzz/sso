@@ -29,9 +29,20 @@ class DYB {
 	 * @param string $firstname User firstname
 	 * @param string $lastname User lastname
 	 * @param string|array $groups_id The id of your groups
-
+	 * @param $doCallback
+	 * @param $doReturn
+	 * @param string $redirect 
+	 * @param string $redirectCvId 
+	 * @param string $back_title 
+	 * @param string $back_href 
+	 * @param string $back_target 
+	 * @param string $button_title 
+	 * @param string $button_action 
 	 */
-	function sso_connect($slug, $lang, $external_id, $timestamp, $email, $secretkey, $firstname = null, $lastname = null, $groups_id = null, $doCallback = false, $doReturn = false) {
+	function sso_connect($slug, $lang, $external_id, $timestamp, $email, $secretkey, $firstname = null, 
+	                     $lastname = null, $groups_id = null, $doCallback = false, $doReturn = false, 
+	                     $redirect = null, $redirectCvId = null, $back_title = null, $back_href = null, $back_target = null,
+	                     $button_title = null, $button_action = null) {
 		$groupsParam = '';
 		if (!is_array($groups_id) && !empty($groups_id)) {
 			$groups_id = array($groups_id);
@@ -48,7 +59,9 @@ class DYB {
 				
 		$param = '?email=' . rawurlencode($email) . '&external_id=' . rawurlencode($external_id) .  '&firstname=' 
 		. rawurlencode($firstname) . $groupsParam . '&hash=' . $hash . '&lastname=' . rawurlencode($lastname) 
-		. '&timestamp=' . $timestamp;
+		. '&timestamp=' . $timestamp . '&redirect=' . $redirect . '&redirectCvId=' . $redirectCvId . '&back_title=' . 
+		$back_title . '&back_href=' . $back_href . '&back_target=' . $back_target . '&button_title=' . $button_title 
+		. '&button_action=' . $button_action;
 		
 		$url = 'http://showcase.doyoubuzz.com/p/' . $lang . '/' . $slug . '/sso' . $param;
 
