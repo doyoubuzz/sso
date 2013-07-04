@@ -63,7 +63,7 @@ class DYB {
 		$back_title . '&back_href=' . $back_href . '&back_target=' . $back_target . '&button_title=' . $button_title 
 		. '&button_action=' . $button_action;
 		
-		$url = 'http://showcase.dyb.local/p/' . $lang . '/' . $slug . '/sso' . $param;
+		$url = 'http://showcase.doyoubuzz.com/p/' . $lang . '/' . $slug . '/sso' . $param;
 
 		header('location:'.$url, true, 302);
 		exit;
