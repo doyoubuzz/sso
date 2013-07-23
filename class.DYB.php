@@ -59,7 +59,7 @@ class DYB {
 				
 		$param = '?email=' . rawurlencode($email) . '&external_id=' . rawurlencode($external_id) .  '&firstname=' 
 		. rawurlencode($firstname) . $groupsParam . '&hash=' . $hash . '&lastname=' . rawurlencode($lastname) 
-		. '&timestamp=' . $timestamp . '&redirect=' . $redirect . '&redirectCvId=' . $redirectCvId . '&back_title=' . 
+		. '&timestamp=' . $timestamp . '&redirect=' . $redirect . '&cv=' . $redirectCvId . '&back_title=' . 
 		$back_title . '&back_href=' . $back_href . '&back_target=' . $back_target . '&button_title=' . $button_title 
 		. '&button_action=' . $button_action;
 		
