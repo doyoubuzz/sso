@@ -36,13 +36,13 @@ class DYB {
 	 * @param string $back_title 
 	 * @param string $back_href 
 	 * @param string $back_target 
-	 * @param string $button_title 
-	 * @param string $button_action 
+	 * @param string $action_title 
+	 * @param string $action_url 
 	 */
 	function sso_connect($slug, $lang, $external_id, $timestamp, $email, $secretkey, $firstname = null, 
 	                     $lastname = null, $groups_id = null, $doCallback = false, $doReturn = false, 
 	                     $redirect = null, $redirectCvId = null, $back_title = null, $back_href = null, $back_target = null,
-	                     $button_title = null, $button_action = null) {
+	                     $action_title = null, $action_url = null) {
 		$groupsParam = '';
 		if (!is_array($groups_id) && !empty($groups_id)) {
 			$groups_id = array($groups_id);
@@ -60,8 +60,8 @@ class DYB {
 		$param = '?email=' . rawurlencode($email) . '&external_id=' . rawurlencode($external_id) .  '&firstname=' 
 		. rawurlencode($firstname) . $groupsParam . '&hash=' . $hash . '&lastname=' . rawurlencode($lastname) 
 		. '&timestamp=' . $timestamp . '&redirect=' . $redirect . '&redirectCvId=' . $redirectCvId . '&back_title=' . 
-		$back_title . '&back_href=' . $back_href . '&back_target=' . $back_target . '&button_title=' . $button_title 
-		. '&button_action=' . $button_action;
+		$back_title . '&back_href=' . $back_href . '&back_target=' . $back_target . '&action_title=' . $action_title 
+		. '&action_url=' . $action_url;
 		
 		$url = 'http://showcase.doyoubuzz.com/p/' . $lang . '/' . $slug . '/sso' . $param;
 
