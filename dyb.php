@@ -5,7 +5,8 @@ $slug = 'battlestar';							 		            // Your slug
 $user = array( 'id'        => 'kara-thrace',					// The user id on your system
 			   'email'     => 'kara.thrace@doyoubuzz.com',      // User email
 			   'firstname' => 'Kara',			 	            // User first name
-			   'lastname'  => 'Thrace'				 	        // User last name
+			   'lastname'  => 'Thrace',				 	        // User last name
+			   'user_type' => '3'				 	        // User last name
 			  );
 $secret_key = 'IBebIUWBAah7EiQ';				 	            // SSO Secret Key (in your BO > Settings > General Settings > SSO)				    
 $groups = array('pilote', 'viper');                      	    // Array of the groups id (on your system) the user belongs to
@@ -20,7 +21,8 @@ if ( isset($_GET['timestamp']) ) {
 		$secret_key,
 		$user['firstname'],
 		$user['lastname'],
-		$groups
+		$groups,
+		$user['user_type']
 	);  
 	
 }
