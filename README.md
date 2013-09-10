@@ -30,7 +30,7 @@ Please note it may take up to 10 minutes before the user appears in your user li
 
 ## Parameters to send to the SSO URL: 
 
-When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like ```http://showcase.doyoubuzz.com/p/fr/your-company/sso?email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825```
+When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like ```http://showcase.doyoubuzz.com/p/fr/your-company/sso?email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825```
 
 Of course, all the data need to be "url encoded"
 
@@ -60,10 +60,14 @@ If you have several groups, you can use ```&groups[]=group-1&groups[]=group-2```
 
 This is the timestamp given earlier to you by the SSO page as a GET parameter. You just need to send it again to the SSO page as a security measure.
 
+### user_type (optional)
+
+It could be '1', '2' or '3'.
+
 ### hash
 
 The hash parameter is a md5 of the concatenation of email, firstname, lastname, external_id, groups, timestamp and the secretkey.
 
-In PHP: ```$hash = md5($email . $firstname . $lastname . $external_id . $group . $timestamp . $secretkey);```
+In PHP: ```$hash = md5($email . $firstname . $lastname . $external_id . $group . $user_type . $timestamp . $secretkey);```
 
 Please note : the group parameter is a concatenation of the differents groups. For example if your Kara Thrace belongs to the groups 'pilot' and 'viper' the $group variable above will be 'pilotviper'

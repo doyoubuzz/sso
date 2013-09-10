@@ -29,6 +29,7 @@ class DYB {
 	 * @param string $firstname User firstname
 	 * @param string $lastname User lastname
 	 * @param string|array $groups_id The id of your groups
+	 * @param string $user_type Type of the user : '1', '2', '3' or null
 	 * @param $doCallback
 	 * @param $doReturn
 	 * @param string $redirect 
@@ -40,7 +41,7 @@ class DYB {
 	 * @param string $action_url 
 	 */
 	function sso_connect($slug, $lang, $external_id, $timestamp, $email, $secretkey, $firstname = null, 
-	                     $lastname = null, $groups_id = null, $doCallback = false, $doReturn = false, 
+	                     $lastname = null, $groups_id = null, $user_type = null, $doCallback = false, $doReturn = false, 
 	                     $redirect = null, $redirectCvId = null, $back_title = null, $back_href = null, $back_target = null,
 	                     $action_title = null, $action_url = null) {
 		$groupsParam = '';
@@ -55,11 +56,11 @@ class DYB {
 			}
 		}
 		
-		$hash = md5($email . $firstname . $lastname . $external_id . $group . $timestamp . $secretkey);
+		$hash = md5($email . $firstname . $lastname . $external_id . $group . $user_type . $timestamp . $secretkey);
 				
 		$param = '?email=' . rawurlencode($email) . '&external_id=' . rawurlencode($external_id) .  '&firstname=' 
 		. rawurlencode($firstname) . $groupsParam . '&hash=' . $hash . '&lastname=' . rawurlencode($lastname) 
-		. '&timestamp=' . $timestamp . '&redirect=' . $redirect . '&redirectCvId=' . $redirectCvId . '&back_title=' . 
+		. '&user_type=' . $user_type . '&timestamp=' . $timestamp . '&redirect=' . $redirect . '&redirectCvId=' . $redirectCvId . '&back_title=' . 
 		$back_title . '&back_href=' . $back_href . '&back_target=' . $back_target . '&action_title=' . $action_title 
 		. '&action_url=' . $action_url;
 		
