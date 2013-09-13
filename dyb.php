@@ -2,8 +2,6 @@
 $_SESSION['timestamp'] = isset( $_GET['timestamp'] ) ? $_GET['timestamp'] : '';
 
 $slug = 'battlestar';							 		            // Your slug		
-$cid = 'mycid';                                                      // If SSO with severals URLs is enabled
-
 $user = array( 'id'        => 'kara-thrace',					// The user id on your system
 			   'email'     => 'kara.thrace@doyoubuzz.com',      // User email
 			   'firstname' => 'Kara',			 	            // User first name
@@ -29,7 +27,7 @@ if ( isset($_GET['timestamp']) ) {
 	
 }
 else {
-	echo '<a href="http://showcase.doyoubuzz.com/p/fr/'.$slug.'/sso?cid='.$cid.'">Connexion</a>';		
+	echo '<a href="http://showcase.doyoubuzz.com/p/fr/'.$slug.'/sso">Connexion</a>';		
 }
 
 ?>
