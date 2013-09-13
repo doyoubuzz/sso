@@ -70,7 +70,6 @@ It could be '1', '2' or '3'.
 
 The hash parameter is a md5 of the concatenation of email, firstname, lastname, external_id, groups, timestamp and the secretkey.
 
-In PHP: ```$hash = md5($email . $firstname . $lastname . $external_id . $group 
-. $user_type . $timestamp . $secretkey);```
+In PHP: ```$hash = md5($email . $firstname . $lastname . $external_id . $group . $user_type . $timestamp . $secretkey);```
 
 Please note : the group parameter is a concatenation of the differents groups. For example if your Kara Thrace belongs to the groups 'pilot' and 'viper' the $group variable above will be 'pilotviper'
