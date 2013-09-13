@@ -19,7 +19,7 @@ If you want to link the user to a specific group (or groups) in DoYouBuzz Showca
 
 The SSO follow these different steps:
 
-* You direct you visitor on the page http://showcase.doyoubuzz.com/p/fr/your-company/sso
+* You direct you visitor on the page http://showcase.doyoubuzz.com/p/fr/your-company/sso (don't forget to add the "cid" parameter in URL, if multiple URL mode is activated : http://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid)
 * The visitor is automatically redirected on the URL you configured earlier with a timestamp parameter (it will be used for security purpose)
 * This page must check if the user is logged in into your system. In this case, you must redirect this user to a specific URL with a few parameters (this URL is given on the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso)), it looks like http://showcase.doyoubuzz.com/p/fr/your-company/sso 
 * DoYouBuzz checks these parameters. If they are valid, several cases are possible :
@@ -30,7 +30,9 @@ Please note it may take up to 10 minutes before the user appears in your user li
 
 ## Parameters to send to the SSO URL: 
 
-When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like ```http://showcase.doyoubuzz.com/p/fr/your-company/sso?email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825```
+When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like 
+
+http://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid&email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825
 
 Of course, all the data need to be "url encoded"
 
