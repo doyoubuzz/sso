@@ -1,7 +1,7 @@
 DoYouBuzz Single Sign-On (SSO)
 =======
 
-The SSO connection for DoYouBuzz Campus and DoYouBuzz Showcase allow you to connect your resume database application to your own system (intranet, extranet, etc.).
+The SSO connection for DoYouBuzz Campus and DoYouBuzz Showcase allow you to connect your resume database application to your own system (intranet, extranet, etc.). All user roles (user, manager or administrator) can use the login, however, only the user role can be created with the SSO.
 
 ## Activate the SSO in your Company settings
 
@@ -11,7 +11,7 @@ Go to the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso). The
 
 ## Configure the external id of the groups
 
-If you want to link the user to a specific group (or groups) in DoYouBuzz Showcase / Campus, you need to edit the group on DoYouBuzz Showcase / Campus as an admin, and set the "external id". The "external id" is the id of the group in your system (it can be a numeric or alphanumric value)
+If you want to link the user to a specific group (or groups) in DoYouBuzz Showcase / Campus, you need to edit the group on DoYouBuzz Showcase / Campus as an admin, and set the "external id". The "external id" is the id of the group in your system (it can be a numeric or alphanumric value).
 
 ![Group external ID](http://stock.doyoubuzz.com/doc/sso/group-external.png "Group External Id")
 
@@ -32,7 +32,7 @@ Please note it may take up to 10 minutes before the user appears in your user li
 
 When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like ```http://showcase.doyoubuzz.com/p/fr/your-company/sso?email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825```
 
-Of course, all the data need to be "url encoded"
+Of course, all the data need to be "url encoded".
 
 ### email
 
@@ -62,7 +62,7 @@ This is the timestamp given earlier to you by the SSO page as a GET parameter. Y
 
 ### user_type (optional)
 
-It could be '1', '2' or '3'.
+On DoYouBuzz Showcase, you can configure up to 3 types of users. You can use the SSO to create a specific user type or to update a user with a specific type. Default (no parameter given) is the user_type 1.
 
 ### hash
 

@@ -6,7 +6,7 @@ $user = array( 'id'        => 'kara-thrace',					// The user id on your system
 			   'email'     => 'kara.thrace@doyoubuzz.com',      // User email
 			   'firstname' => 'Kara',			 	            // User first name
 			   'lastname'  => 'Thrace',				 	        // User last name
-			   'user_type' => '3'				 	        // User last name
+			   'user_type' => '2'				 	            // User type
 			  );
 $secret_key = 'IBebIUWBAah7EiQ';				 	            // SSO Secret Key (in your BO > Settings > General Settings > SSO)				    
 $groups = array('pilote', 'viper');                      	    // Array of the groups id (on your system) the user belongs to
@@ -27,7 +27,11 @@ if ( isset($_GET['timestamp']) ) {
 	
 }
 else {
-	echo '<a href="http://showcase.doyoubuzz.com/p/fr/'.$slug.'/sso">Connexion</a>';		
+	echo '<a href="http://showcase.doyoubuzz.com/p/fr/'.$slug.'/sso">Connexion</a>';
+
+	// If you used the multi-site configuration you could do this : 
+	// echo '<a href="http://showcase-beta.doyoubuzz.com/p/fr/'.$slug.'/sso?cid=site_1">Connexion Site 1</a>';		
+	// echo '<a href="http://showcase-beta.doyoubuzz.com/p/fr/'.$slug.'/sso?cid=site_2">Connexion Site 2</a>';		
 }
 
 ?>
