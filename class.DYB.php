@@ -55,15 +55,15 @@ class DYB {
 				$group .= $g;
 			}
 		}
-		
+
 		$hash = md5($email . $firstname . $lastname . $external_id . $group . $user_type . $timestamp . $secretkey);
-				
+
 		$param = '?email=' . rawurlencode($email) . '&external_id=' . rawurlencode($external_id) .  '&firstname=' 
 		. rawurlencode($firstname) . $groupsParam . '&hash=' . $hash . '&lastname=' . rawurlencode($lastname) 
 		. '&user_type=' . $user_type . '&timestamp=' . $timestamp . '&redirect=' . $redirect . '&redirectCvId=' . $redirectCvId . '&back_title=' . 
 		$back_title . '&back_href=' . $back_href . '&back_target=' . $back_target . '&action_title=' . $action_title 
 		. '&action_url=' . $action_url;
-		
+
 		$url = 'http://showcase.doyoubuzz.com/p/' . $lang . '/' . $slug . '/sso' . $param;
 
 		header('location:'.$url, true, 302);
