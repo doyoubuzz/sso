@@ -64,7 +64,9 @@ This is the timestamp given earlier to you by the SSO page as a GET parameter. Y
 
 ### user_type (optional)
 
-On DoYouBuzz Showcase, you can configure up to 3 types of users. You can use the SSO to create a specific user type or to update a user with a specific type. Default (no parameter given) is the user_type 1.
+On DoYouBuzz Showcase, you can configure up to 3 types of users (candidate, consultant and other). You can use the SSO to create a specific user type or to update a user with a specific type. Default (no parameter given) is the user_type 1.
+
+This parameter does not concern managers or administrators.
 
 ### hash
 
