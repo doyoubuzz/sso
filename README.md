@@ -5,7 +5,7 @@ The SSO connection for DoYouBuzz Campus and DoYouBuzz Showcase allow you to conn
 
 ## Activate the SSO in your Company settings
 
-Go to the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso). Then, generate a new key and enter the  URL on your system that will handle the SSO.
+Go to the [SSO settings page](https://showcase.doyoubuzz.com/a/settings/sso). Then, generate a new key and enter the  URL on your system that will handle the SSO.
 
 ![SSO Settings](http://stock.doyoubuzz.com/doc/sso/sso-settings.png "SSO Settings")
 
@@ -19,9 +19,9 @@ If you want to link the user to a specific group (or groups) in DoYouBuzz Showca
 
 The SSO follow these different steps:
 
-* You direct you visitor on the page http://showcase.doyoubuzz.com/p/fr/your-company/sso (don't forget to add the "cid" parameter in URL, if multiple URL mode is activated : http://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid)
+* You direct you visitor on the page https://showcase.doyoubuzz.com/p/fr/your-company/sso (don't forget to add the "cid" parameter in URL, if multiple URL mode is activated : https://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid)
 * The visitor is automatically redirected on the URL you configured earlier with a timestamp parameter (it will be used for security purpose)
-* This page must check if the user is logged in into your system. In this case, you must redirect this user to a specific URL with a few parameters (this URL is given on the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso)), it looks like http://showcase.doyoubuzz.com/p/fr/your-company/sso 
+* This page must check if the user is logged in into your system. In this case, you must redirect this user to a specific URL with a few parameters (this URL is given on the [SSO settings page](http://showcase.doyoubuzz.com/a/settings/sso)), it looks like https://showcase.doyoubuzz.com/p/fr/your-company/sso 
 * DoYouBuzz checks these parameters. If they are valid, several cases are possible :
  * The user has alreeady been authenticated on DoYouBuzz through your SSO: in this case, he is automaticlaly connected to his DoYouBuzz account
  * If he hasn't been authenticated previously through the SSO, he is asked to join your database with his DoYouBuzz account (he can use either an existing DoYouBuzz account or create a new account). 
@@ -32,7 +32,7 @@ Please note it may take up to 10 minutes before the user appears in your user li
 
 When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like 
 
-http://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid&email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825
+https://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid&email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825
 
 Of course, all the data need to be "url encoded".
 
