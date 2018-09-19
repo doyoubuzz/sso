@@ -32,35 +32,35 @@ Please note it may take up to 10 minutes before the user appears in your user li
 
 When your redirect the user on the SSO URL, you must also send a few GET parameters. In the end, the URL will look like 
 
-https://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid&email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825
+https://showcase.doyoubuzz.com/p/fr/your-company/sso?cid=mycid&email=kara.thrace%40doyoubuzz.com&external_id=kara-thrace&firstname=Kara&groups[]=pilote&groups[]=viper&user_type=1&hash=653e88ecb79d1a29aa1ed6bf8529d382&lastname=Thrace&timestamp=1349192825&target=user:12
 
 Of course, all the data need to be "url encoded".
 
-### email
+### email (required)
 
 The email of your user on your system
 
-### external_id
+### external_id (required)
 
 The id of your user on your system. It can be a numeric or alphanumeric value
 
-### firstname
+### timestamp (required)
+
+This is the timestamp given earlier to you by the SSO page as a GET parameter. You just need to send it again to the SSO page as a security measure.
+
+### firstname (optional)
 
 Firstname of your user
 
-### lastname
+### lastname (optional)
 
 Lastname of your user
 
-### groups[]
+### groups[] (optional)
 
 The id of the groups on your system that your user will join. Please note that these ids must be configured in DoYouBuzz Showcase / Campus.
 
 If you have several groups, you can use ```&groups[]=group-1&groups[]=group-2```
-
-### timestamp
-
-This is the timestamp given earlier to you by the SSO page as a GET parameter. You just need to send it again to the SSO page as a security measure.
 
 ### user_type (optional)
 
@@ -68,7 +68,17 @@ On DoYouBuzz Showcase, you can configure up to 3 types of users (candidate, cons
 
 This parameter does not concern managers or administrators.
 
-### hash
+### target (optional)
+
+After the SSO login, you can redirect the user to a specific CV or User using the ```target``` parameter.
+
+If you want to redirect the user to an other User profil, use ```target=user:ID``` where ID is the ID number of the target User.
+
+If you want to redirect the user to specific CV, use ```target=cv:ID``` where ID is the ID number of the target CV.
+
+This parameter is not used in the hash generation
+
+### hash (required)
 
 The hash parameter is a md5 of the concatenation of email, firstname, lastname, external_id, groups, timestamp and the secretkey.
 
