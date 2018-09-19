@@ -46,7 +46,7 @@ The id of your user on your system. It can be a numeric or alphanumeric value
 
 ### timestamp (required)
 
-This is the timestamp given earlier to you by the SSO page as a GET parameter. You just need to send it again to the SSO page as a security measure.
+This is the timestamp given earlier by the SSO page as a GET parameter. You just need to send it again to the SSO page as a security measure.
 
 ### firstname (optional)
 
@@ -72,9 +72,9 @@ This parameter does not concern managers or administrators.
 
 After the SSO login, you can redirect the user to a specific CV or User using the ```target``` parameter.
 
-If you want to redirect the user to an other User profil, use ```target=user:ID``` where ID is the ID number of the target User.
+If you want to redirect the user to an other User profile, use ```target=user:ID``` where ID is the ID of the target User.
 
-If you want to redirect the user to specific CV, use ```target=cv:ID``` where ID is the ID number of the target CV.
+If you want to redirect the user to specific CV, use ```target=cv:ID``` where ID is the ID of the target CV.
 
 This parameter is not used in the hash generation
 
